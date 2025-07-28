@@ -1,5 +1,5 @@
 #  We shall import the necessary modules for the models we are going to build:
-from prophet import Prophet
+from prophet import prophet
 import pandas as pd
 import os
 
