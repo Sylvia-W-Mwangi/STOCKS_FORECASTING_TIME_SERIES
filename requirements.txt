@@ -17,7 +17,7 @@ numpy
 packaging==25.0
 pandas==2.3.1
 pillow==11.3.0
-protobuf==6.31.1
+protobuf==3.20.3
 pyarrow==21.0.0
 pydeck==0.9.1
 python-dateutil==2.9.0.post0
@@ -37,6 +37,7 @@ prophet
 scikit-learn
 keras
 tzdata==2025.2
+
 urllib3==2.5.0
 watchdog==6.0.0
 tensorflow
