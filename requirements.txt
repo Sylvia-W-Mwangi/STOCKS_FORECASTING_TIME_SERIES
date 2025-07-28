@@ -34,6 +34,8 @@ tornado==6.5.1
 typing-extensions==4.14.1
 pystan
 prophet
+scikit-learn
+
 tzdata==2025.2
 urllib3==2.5.0
 watchdog==6.0.0
