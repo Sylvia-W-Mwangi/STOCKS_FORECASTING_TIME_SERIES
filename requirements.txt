@@ -37,6 +37,7 @@ prophet
 scikit-learn
 keras
 tzdata==2025.2
+plotly
 
 urllib3==2.5.0
 watchdog==6.0.0
