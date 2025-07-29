@@ -7,6 +7,8 @@ import os
 features = ['Day Price', '30_day_SMA', '30_day_EMA', '100_day_SMA', '100_day_EMA']
 
 # Now, let us load our data:
+
+
 merged_df = pd.read_pickle('merged_nse_df.pkl')
 
 # Prophet model:
@@ -52,8 +54,10 @@ def predict_with_lstm(merged_df, features=features, target_col = 'Day Price', lo
     X_train, y_train = np.array(X_train), np.array(y_train)
 
 # We need to save our model to prevent retraining it everytime the application is ran.
-    model_path = "lstm_final_model.h5"
-    if os.path.exists(model_path) and not save_model:
+    # model_path = "lstm_final_model.h5"
+    model_name = f"lstm_model_{len(features)}f.h5"
+    model_path = os.path.join("models", model_name)
+    if os.path.exists(model_path):
         print("Loading existing LSTM model...")
         from keras.models import load_model
         model = load_model(model_path)
@@ -76,9 +80,9 @@ def predict_with_lstm(merged_df, features=features, target_col = 'Day Price', lo
         model.fit(X_train, y_train, epochs=epochs, batch_size=32, verbose=0)
 
         #  Save model after training.
-        if save_model:
-            model.save(model_path)
-            print("Model saved as lstm_model.h5")
+        
+        model.save(model_path)
+        print("Model saved as lstm_model.h5")
 
     #  Test data (last 100 days + test set)
     past_days = data_training[-lookback_days:]
