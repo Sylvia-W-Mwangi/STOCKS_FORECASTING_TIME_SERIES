@@ -29,7 +29,7 @@ def predict_with_lstm(merged_df, features=features, target_col = 'Day Price', lo
     import numpy as np
     from sklearn.preprocessing import MinMaxScaler
     from keras.models import Sequential
-    from keras.layers import LSTM, Dense, Dropout
+    from keras.layers import LSTM, Dense, Dropout, Input
     import pandas as pd
 
     #  Split into train/test (80%/20%)
